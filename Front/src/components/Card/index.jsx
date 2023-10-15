@@ -62,7 +62,7 @@ const CardImage = styled.img`
 
 Card.propTypes = {
   label: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   picture: PropTypes.string,
 };
 

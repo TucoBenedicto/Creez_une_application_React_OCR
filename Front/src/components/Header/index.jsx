@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import logo from "../../assets/light-logo.png";
-import { StyledLink } from "../../utils/style/StyledLink";
+import { StyledLink } from "../../utils/style/Atoms";
 import { Link } from "react-router-dom";
 
 const NavContainer = styled.nav`
