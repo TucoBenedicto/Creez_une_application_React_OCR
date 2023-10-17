@@ -1,18 +1,37 @@
-import {createContext, useState } from "react"
+import { createContext, useState } from "react";
 
-export const ThemeContext = createContext()
+//? Etat/Variable global pour le changement de couleur du background
+export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("light");
 
-    const [theme, setTheme] = useState('light')
-    
-    const toggleTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light')
-    }
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
-    return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
-            {children}
-        </ThemeContext.Provider>
-    )
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+//? Etat/Variable global pour le changement de couleur du background
+export const SurveyContext = createContext()
+
+export const SurveyProvider = ({ children }) => {
+
+  const [answers, setAnswers] = useState({})
+
+  const saveAnswers = (newAnswers) => {
+    setAnswers({ ...answers, ...newAnswers })
+  }
+
+
+  return (
+    <SurveyContext.Provider value={{ answers, saveAnswers }}>
+      {children}
+    </SurveyContext.Provider>
+  )
 }
